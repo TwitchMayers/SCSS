@@ -1,0 +1,108 @@
+@use "sass:color";
+@use "fonts" as font;
+@use "colors" as colors;
+
+h1,
+h2,
+h3,
+h4 {
+    @include font.font-face('Playfair Display', 500, 'normal', '/fonts/PlayfairDisplay');
+}
+
+
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+    @include font.font-face('geologica', 300, 'normal', '/fonts/Geologica.ttf');
+    ;
+}
+
+a {
+    text-decoration: none;
+
+    &:link {
+        color: adjust-color($color: #000000, $alpha: 1.0)
+    }
+
+    ;
+
+    &:focus {
+        color: adjust-color($color: #ebd9e0, $alpha: 1.0)
+    }
+
+    &:visited {
+        color: adjust-color($color: #8ecae6, $alpha: 1.0)
+    }
+
+    ;
+
+    &:hover {
+        color: adjust-color($color: #ffafcc, $alpha: 1.0)
+    }
+
+    ;
+
+    &:active {
+        color: adjust-color($color: #a7c957, $alpha: 1.0)
+    }
+
+    ;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+
+    @include colors.gradient(getColor('color-blue'), getColor('color-orange'));
+
+    &:hover {
+        @include colors.gradient(getColor('color-blue'), getColor('color-pink'));
+    }
+
+    &:focus {
+        @include colors.gradient(getColor('color-yellow'), getColor('color-dark-green'));
+    }
+
+    &:active {
+        @include colors.gradient(getColor('color-dark-green'), getColor('color-light-green'));
+    }
+
+    &:disabled {
+        @include colors.gradient(getColor('color-blue'), getColor('color-yellow'));
+    }
+
+    padding: 15px;
+}
+
+ol {
+    list-style: none;
+
+}
+
+ul {
+    list-style: none;
+
+}
+
+li {
+    list-style: none;
+}

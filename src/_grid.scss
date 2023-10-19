@@ -1,0 +1,16 @@
+@use "colors" as colors;
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 15px;
+    margin: 50px auto;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        grid-column: span $i;
+        height: 50px;
+        background-color: colors.getColor('color-pink');
+    }
+}

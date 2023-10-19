@@ -1,0 +1,20 @@
+$colors: (
+    'color-pink': #ff5f90,
+    'color-white': #ffffff,
+    'color-sky': #80d7ff,
+    'color-black': #000000,
+    'color-yellow': #ffd500,
+    'color-orange': #e87800,
+    'color-blue': #0003b5,
+    'color-dark-green': #006514,
+    'color-light-green': #9adb00,
+
+);
+
+@function getColor($color) {
+    @return map-get($colors, $color);
+}
+
+@mixin gradient($color1, $color2) {
+    background: linear-gradient($color1, $color2);
+}
